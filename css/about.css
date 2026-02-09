@@ -1,0 +1,1007 @@
+/* ===== About Page Styles ===== */
+
+/* About Hero Section */
+.about-hero {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, var(--blue-light) 100%);
+    min-height: 70vh;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0 60px;
+}
+
+.about-hero .hero-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-quote {
+    border-left: 4px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-quote::before {
+    content: '✨';
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 2rem;
+    opacity: 0.3;
+}
+
+/* Excellence Circle */
+.about-hero-visual {
+    position: relative;
+    height: 400px;
+}
+
+.excellence-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 20s infinite linear;
+}
+
+.circle-ring {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite;
+}
+
+.circle-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.excellence-icon {
+    font-size: 4rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    animation: bounce 3s infinite;
+}
+
+.excellence-text {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 0.4; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Floating Icons */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.float-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    animation: float-around 15s infinite linear;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.float-icon.doc {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.float-icon.check {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    top: 70%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.float-icon.shield {
+    background: linear-gradient(135deg, #2196F3 0%, #0D47A1 100%);
+    top: 30%;
+    right: 15%;
+    animation-delay: 4s;
+}
+
+.float-icon.target {
+    background: linear-gradient(135deg, #9C27B0 0%, #6A1B9A 100%);
+    top: 75%;
+    right: 10%;
+    animation-delay: 6s;
+}
+
+@keyframes float-around {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(30px, -30px) rotate(90deg); }
+    50% { transform: translate(0, -60px) rotate(180deg); }
+    75% { transform: translate(-30px, -30px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Background Elements */
+.about-bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.about-bg-elements .bg-element {
+    position: absolute;
+    font-size: 4rem;
+    opacity: 0.05;
+    animation: float-slow 25s infinite linear;
+}
+
+@keyframes float-slow {
+    0% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-40px) rotate(120deg); }
+    66% { transform: translateY(20px) rotate(240deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* Identity Cards */
+.identity-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.identity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.identity-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gold-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--gold-dark);
+    margin-bottom: 25px;
+}
+
+.identity-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.identity-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gold);
+}
+
+.identity-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--dark-text);
+}
+
+.identity-highlight {
+    border-left: 4px solid var(--gold);
+}
+
+/* Service Items */
+.service-item {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--blue), var(--gold));
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(10, 36, 99, 0.15);
+}
+
+.service-item-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+}
+
+.service-item-title {
+    font-size: 1.3rem;
+    color: var(--blue);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.service-item-text {
+    color: var(--light-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.service-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Approach Steps */
+.approach-steps {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.approach-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.approach-step:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 40px rgba(10, 36, 99, 0.15);
+}
+
+.step-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-right: 25px;
+    min-width: 60px;
+    line-height: 1;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-title {
+    font-size: 1.4rem;
+    color: var(--blue);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.step-description {
+    color: var(--light-text);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 20px;
+}
+
+/* Reason Cards */
+.reason-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 2px solid transparent;
+}
+
+.reason-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+}
+
+.reason-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+    color: white;
+}
+
+.reason-title {
+    font-size: 1.2rem;
+    color: var(--blue);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.reason-text {
+    color: var(--light-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Commitment Section */
+.commitment-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.commitment-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    animation: pulse 4s infinite;
+}
+
+.commitment-icon {
+    font-size: 4rem;
+    color: var(--gold);
+    animation: bounce 3s infinite;
+}
+
+.commitment-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    color: rgb(248, 244, 3);
+}
+
+.commitment-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gold);
+}
+
+.commitment-principle {
+    position: relative;
+    z-index: 2;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Trust Elements */
+.trust-item {
+    padding: 30px 20px;
+    background: white;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.trust-item:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.1);
+}
+
+.trust-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--blue-dark);
+    margin: 0 auto 20px;
+    transition: all 0.3s ease;
+}
+
+.trust-item:hover .trust-icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.trust-title {
+    font-size: 1.2rem;
+    color: var(--blue);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.trust-text {
+    color: var(--light-text);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 80px 0 40px;
+        min-height: auto;
+    }
+    
+    .about-hero .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .excellence-circle {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .excellence-icon {
+        font-size: 3rem;
+    }
+    
+    .excellence-text {
+        font-size: 1.2rem;
+    }
+    
+    .float-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .identity-card {
+        padding: 25px;
+    }
+    
+    .identity-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .approach-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .step-icon {
+        margin-left: 0;
+        margin-top: 15px;
+        order: 3;
+    }
+    
+    .commitment-title {
+        font-size: 2rem;
+    }
+}
+
+/* ===== Simplified About Hero ===== */
+.about-hero-simple {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
+    min-height: 60vh;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+}
+
+.about-hero-simple .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about-hero-simple .hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gold);
+}
+
+.hero-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.about-hero-simple .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== Updated Section Backgrounds ===== */
+
+/* Company Identity Section Background */
+.company-identity {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.company-identity::before {
+    content: '🏢';
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 10rem;
+    opacity: 0.03;
+    z-index: 0;
+}
+
+.company-identity .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* What We Do Section Background */
+.what-we-do {
+    background: rgb(240, 227, 157);
+    position: relative;
+    overflow: hidden;
+}
+
+.what-we-do::before {
+    content: '📋';
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    font-size: 12rem;
+    opacity: 0.03;
+    z-index: 0;
+    animation: float-slow 20s infinite linear;
+}
+
+.what-we-do .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Our Approach Section Background */
+.our-approach {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.our-approach::before {
+    content: '✓';
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    font-size: 15rem;
+    opacity: 0.03;
+    z-index: 0;
+    animation: rotate-slow 30s infinite linear;
+}
+
+.our-approach::after {
+    content: '✓';
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+    font-size: 15rem;
+    opacity: 0.03;
+    z-index: 0;
+    animation: rotate-slow-reverse 40s infinite linear;
+}
+
+.our-approach .container {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-slow-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+/* Why Choose Us Section Background */
+.why-choose-us {
+    /* background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); */
+    background: rgb(243, 237, 204);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-us::before {
+    content: '⭐';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20rem;
+    opacity: 0.02;
+    z-index: 0;
+}
+
+.why-choose-us .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Commitment Section Background */
+.commitment-section {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.commitment-section::before {
+    content: '🤝';
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 8rem;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.commitment-section::after {
+    content: '🤝';
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    font-size: 8rem;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.commitment-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Trust Elements Section Background */
+.trust-elements {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.trust-elements::before {
+    content: '🔒';
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    font-size: 10rem;
+    opacity: 0.03;
+    z-index: 0;
+}
+
+.trust-elements::after {
+    content: '👥';
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+    font-size: 10rem;
+    opacity: 0.03;
+    z-index: 0;
+}
+
+.trust-elements .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Updated Identity Cards ===== */
+.identity-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.identity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--gold), var(--blue));
+    transition: width 0.3s ease;
+}
+
+.identity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.identity-card:hover::before {
+    width: 100%;
+    opacity: 0.05;
+}
+
+.identity-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Updated Service Items ===== */
+.service-item {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--gold));
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 35px rgba(10, 36, 99, 0.1);
+}
+
+/* ===== Updated Approach Steps ===== */
+.approach-step {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+}
+
+.approach-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--gold-light) 0%, transparent 70%);
+    opacity: 0.3;
+}
+
+.approach-step:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 35px rgba(10, 36, 99, 0.1);
+}
+
+/* ===== Updated Reason Cards ===== */
+.reason-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 2px solid rgba(212, 175, 55, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.reason-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+}
+
+.reason-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin: 0 auto 25px;
+    color: white;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    transition: all 0.3s ease;
+}
+
+.reason-card:hover .reason-icon {
+    transform: rotateY(360deg);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* ===== Updated Trust Items ===== */
+.trust-item {
+    padding: 35px 25px;
+    background: white;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 51, 102, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.trust-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--gold));
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.trust-item:hover::before {
+    transform: translateY(0);
+}
+
+.trust-item:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.1);
+}
+
+.trust-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: var(--blue-dark);
+    margin: 0 auto 25px;
+    transition: all 0.3s ease;
+}
+
+.trust-item:hover .trust-icon {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Responsive Design Updates */
+@media (max-width: 768px) {
+    .about-hero-simple {
+        padding: 80px 0;
+        min-height: auto;
+    }
+    
+    .about-hero-simple .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .company-identity::before,
+    .what-we-do::before,
+    .our-approach::before,
+    .our-approach::after,
+    .why-choose-us::before,
+    .commitment-section::before,
+    .commitment-section::after,
+    .trust-elements::before,
+    .trust-elements::after {
+        display: none;
+    }
+    
+    .approach-step {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .step-number {
+        margin-bottom: 15px;
+    }
+    
+    .step-icon {
+        margin-top: 15px;
+    }
+}
