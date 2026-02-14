@@ -107,6 +107,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.social-icon.tiktok {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .social-icon.linkedin {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -147,6 +151,12 @@ h1, h2, h3, h4, h5, h6 {
 .social-icon.youtube:hover {
     background-color: #FF0000;
     border-color: #FF0000;
+    transform: translateY(-3px);
+}
+
+.social-btn.tiktok:hover{
+    background-color: #69C9D0;
+    border-color: #69C9D0;
     transform: translateY(-3px);
 }
 
@@ -393,6 +403,18 @@ body {
         animation: fadeInUp 1.2s ease-out 0.3s both;
     }
 
+    .hero h4 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        background: linear-gradient(135deg, var(--white) 0%, var(--gold-light) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: fadeInUp 1.2s ease-out 0.3s both;
+    }
+
     .hero-tagline {
         font-size: 1.8rem;
         margin-bottom: 2rem;
@@ -506,6 +528,12 @@ body {
     .section-header {
         text-align: center;
         margin-bottom: 4rem;
+    }
+
+    .section-header1 {
+        text-align: center;
+        margin-bottom: 4rem;
+        color: #e41515;
     }
 
     .section-label {
@@ -1301,6 +1329,7 @@ body {
 .social-btn.linkedin:hover i { color: #0077B5 !important; }
 .social-btn.instagram:hover i { color: #E4405F !important; }
 .social-btn.youtube:hover i { color: #FF0000 !important; }
+.social-btn.tiktok:hover i {color: #EE1D52 !important; }
 
 /* Footer Decoration Circles */
 .footer-bottom-decoration {
@@ -1529,3 +1558,275 @@ body {
         margin: 10px;
     }
 }
+
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse-ring {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+    100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes slideRight {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+.why-lose-section .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-lose-section .card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3) !important;
+}
+
+/* Floating animation for background objects */
+.position-absolute {
+    animation: float 6s infinite ease-in-out;
+}
+
+/* Different animation delays for variety */
+.position-absolute:nth-child(1) { animation-delay: 0s; }
+.position-absolute:nth-child(2) { animation-delay: 1s; }
+.position-absolute:nth-child(3) { animation-delay: 2s; }
+.position-absolute:nth-child(4) { animation-delay: 3s; }
+.position-absolute:nth-child(5) { animation-delay: 4s; }
+.position-absolute:nth-child(6) { animation-delay: 5s; }
+
+
+/* ===== Enhanced Services Section Styles ===== */
+
+/* Service Card Enhancements */
+.services-section .service-card {
+    position: relative;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.services-section .service-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 51, 102, 0.15);
+}
+
+/* Service Tags */
+.service-tags .badge {
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: rgba(0, 51, 102, 0.05) !important;
+    color: var(--blue) !important;
+    transition: all 0.3s ease;
+}
+
+.service-tags .badge:hover {
+    background-color: var(--gold) !important;
+    color: var(--blue-dark) !important;
+}
+
+/* Tender Feature List */
+.tender-feature-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.tender-feature-list li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.tender-feature-list li i {
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* Support List */
+.support-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.support-list li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.support-list li i {
+    width: 20px;
+    flex-shrink: 0;
+}
+
+/* Compliance Stats */
+.compliance-stats {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.02) 0%, rgba(212, 175, 55, 0.05) 100%);
+}
+
+.compliance-stats .h3 {
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+/* Support Badge */
+.support-badge .badge {
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 25px !important;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Service Icon Enhancement */
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+/* Section Header Refinements */
+.section-label {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.section-label::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2px;
+}
+
+/* Section Title */
+.section-title {
+    position: relative;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* Section Description */
+.section-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--light-text);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Border Top with Gold */
+.border-top.border-gold {
+    border-top: 2px solid var(--gold) !important;
+}
+
+/* Two Column Layout Adjustments */
+@media (min-width: 992px) {
+    .services-section .col-lg-6:first-child .service-card {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+    }
+    
+    .services-section .col-lg-6:last-child .service-card {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .services-section .col-lg-6 {
+        margin-bottom: 20px;
+    }
+    
+    .compliance-stats .h3 {
+        font-size: 1.5rem;
+    }
+    
+    .support-badge .badge {
+        font-size: 0.85rem;
+        white-space: normal;
+        line-height: 1.5;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .service-tags {
+        margin-top: 15px;
+    }
+}
+
+/* Grid Gap Adjustment */
+.services-grid {
+    gap: 25px;
+}
+
+/* Card Height Consistency */
+.service-card.h-100 {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card.h-100 .service-tags {
+    margin-top: auto;
+}
+
+/* Gold Color Utility */
+.bg-gold {
+    background-color: var(--gold) !important;
+}
+
+.text-gold {
+    color: var(--gold) !important;
+}
+
+.border-gold {
+    border-color: var(--gold) !important;
+}
+
+/* Light Blue Background */
+.bg-light-blue {
+    background-color: rgba(0, 51, 102, 0.03) !important;
+}
+
+/* Animation for fade-in (if not already in your CSS) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
